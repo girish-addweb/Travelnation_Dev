@@ -1,5 +1,4 @@
 package AddModule_dev_site.Pages;
-// This is for the testing in the pull requated
 import AddModule_dev_site.ActionClass.ActionClass;
 import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.WebDriver;
