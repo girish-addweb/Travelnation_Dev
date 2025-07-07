@@ -11,13 +11,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
 import java.util.List;
-
 import static AddModule_dev_site.ActionClass.ActionClass.test;
 import static AddModule_dev_site.Constans.CommonVars.Price;
 
@@ -1166,7 +1164,6 @@ public class Addcontent_Module {
             System.out.println("The created content name does NOT match the title field.");
         }
     }
-
     public void loginToGitHub(WebDriver driver, String username, String password) {
         driver.get("https://github.com/login");
 
@@ -1182,7 +1179,6 @@ public class Addcontent_Module {
         WebElement loginButton = driver.findElement(By.name("commit"));
         loginButton.click();
     }
-
     public void Generic_Article(String titlefield, String editTitleField) throws InterruptedException, IOException {
         ActionClass actionclass = new ActionClass(driver, extentTest);
         VerificationClass verificationClass = new VerificationClass(driver, extentTest);
