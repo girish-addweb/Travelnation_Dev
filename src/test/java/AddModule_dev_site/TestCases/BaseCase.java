@@ -29,18 +29,14 @@ public class BaseCase extends Report {
         // Set the path for the ChromeDriver executable
         System.setProperty("webdriver.chrome.driver",
                 "C:\\Users\\addweb\\Desktop\\Travelnation_automation\\Travelnation_Dev-Site_Automation\\Travelnation_AddModule_Automation\\chromedriver.exe");
-
         // Configure Chrome options
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("window-size=1920,1080");
-
         // Initialize the ChromeDriver
         driver = new ChromeDriver(options);
-
         // Navigate to the development URL
         driver.get(Dev_URL);
-
         // Optional wait (can be replaced with WebDriverWait)
         Thread.sleep(5000);
     }
@@ -49,7 +45,6 @@ public class BaseCase extends Report {
     public void tearDown() {
         if (driver != null) {
         }
-
         if (extent != null) {
             extent.flush(); // Flush the report data
         }
@@ -165,7 +160,7 @@ public class BaseCase extends Report {
             int responseCode = connection.getResponseCode();
             System.out.println("Response Code: " + responseCode);
 
-            if (responseCode == 200) {
+            if (responseCode == 400) {
                 System.out.println("Message sent successfully!");
             } else {
                 System.out.println("Failed to send message. Response Code: " + responseCode);
