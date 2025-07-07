@@ -23,10 +23,8 @@ public class Report {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy_HH-mm-ss");
     String formattedDateTime = currentDateTime.format(formatter);
     String reportFileName = formattedDateTime + "_TestReport.html";
-
     // Report Path
     public String reportPath = userDirectory + "/src/test/java/AddModule_dev_site/Reports/" + reportFileName;
-
     @BeforeSuite(alwaysRun = true)
     public void initReport() throws SQLException, IOException {
         Files.createDirectories(Paths.get(userDirectory + "/src/test/java/AddModule_dev_site/Reports/"));
@@ -43,7 +41,6 @@ public class Report {
     @AfterSuite(alwaysRun = true)
     public void tearDown() {
         if (extent != null) {
-            // Flush the ExtentReports to write everything to the file
             extent.flush();
         }
     }

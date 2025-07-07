@@ -22,7 +22,6 @@ public class TestCasePage_Addcontent extends BaseCase {
         BElogin.Login(username, password);
     }
     // this is for the blog post testing
-
     @Test(priority = 2, groups = "AddContent")
     public void Blogpost_Module() throws IOException, InterruptedException, SQLException, AWTException {
         logger = extent.createTest("Check blogpost module functionality.");
@@ -30,14 +29,12 @@ public class TestCasePage_Addcontent extends BaseCase {
         blogpost.BlogPost(Titlename, expacted_message, Edit_Titlename, Edit_expacted_message, Delete_expacted_message);
     }
     // this is for the CampervanCollection module testing
-
     @Test(priority = 3, groups = "AddContent")
     public void CampervanCollection_Module() throws IOException, InterruptedException, SQLException, AWTException {
         logger = extent.createTest("Check CampervanCollection module functionality.");
         Addcontent_Module CampervanCollection = new Addcontent_Module(driver, logger);
         CampervanCollection.CampervanCollection(Titlename, String.valueOf(Price), Edit_Titlename);
     }
-
     // this is for the Country module testing
     @Test(priority = 4, groups = "AddContent")
     public void Country() throws IOException, InterruptedException, SQLException, AWTException {
@@ -52,7 +49,6 @@ public class TestCasePage_Addcontent extends BaseCase {
         Addcontent_Module GAdventurestour = new Addcontent_Module(driver, logger);
         GAdventurestour.GAdventurestour(Titlename, Edit_Titlename);
     }
-
     // this is for the Generic_Article module testing
     @Test(priority = 6, groups = "AddContent")
     public void Generic_Article_Module() throws IOException, InterruptedException, SQLException, AWTException {
@@ -127,5 +123,5 @@ public class TestCasePage_Addcontent extends BaseCase {
         logger = extent.createTest("Check Video-Homepgae module functionality.");
         Addcontent_Module Video_home = new Addcontent_Module(driver, logger);
         Video_home.Video_Homepage(Titlename, Edit_Titlename);
-        }
+    }
 }
