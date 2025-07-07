@@ -1,5 +1,4 @@
 package AddModule_dev_site.Pages;
-// this is for the testing
 import AddModule_dev_site.ActionClass.ActionClass;
 import AddModule_dev_site.ActionClass.VerificationClass;
 import com.aventstack.extentreports.ExtentTest;
