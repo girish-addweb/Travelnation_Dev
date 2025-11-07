@@ -11,22 +11,23 @@ import java.io.IOException;
 public class BELogin {
         WebDriver driver;
         ExtentTest extentTest;
-       @FindBy(xpath = "/html/body/div[2]/main/section/div/div/div/div/div/div[3]/form/div[1]/input")
+       @FindBy(xpath = "//input[@id='edit-name']")
        WebElement usernamefield;
-       @FindBy(xpath = "/html/body/div[2]/main/section/div/div/div/div/div/div[3]/form/div[2]/input")
+       @FindBy(xpath = "//input[@id='edit-pass']")
        WebElement passwordfield;
-       @FindBy(xpath = "/html/body/div[2]/main/section/div/div/div/div/div/div[3]/form/div[3]/input")
+       @FindBy(xpath = "//input[@id='edit-submit']")
        WebElement submit;
-       @FindBy(xpath = "/html/body/div[2]/nav/div[2]/div/nav/div[1]/ul/li[2]/a")
+       @FindBy(xpath = "//a[@class='toolbar-icon toolbar-icon-system-admin-content']")
        WebElement Content;
-       @FindBy(xpath = "/html/body/div[2]/div[1]/div[1]/div/div/nav/ol/li[1]/a")
-       WebElement backtosite;
-       @FindBy(xpath = "/html/body/div[2]/nav/div[2]/div/nav/div[1]/ul/li[2]/ul/li[2]/a")
+//       @FindBy(xpath = "/html/body/div[2]/div[1]/div[1]/div/div/nav/ol/li[1]/a")
+//       WebElement backtosite;
+       @FindBy(xpath = "//a[normalize-space()='Add content']")
        WebElement AddContent;
        @FindBy(xpath = "/html/body/div[2]/nav/div[2]/a")
        WebElement managebutton;
-       @FindBy(xpath = "/html/body/div[9]/div/div/div/div[4]/div[2]/button[2]")
-       WebElement accpt;
+       @FindBy(xpath = "//button[normalize-space(text())='Accept']")
+       WebElement accept;
+       @FindBy(xpath = "//*[@id=\"iubenda-cs-banner\"]/div")WebElement popup;
 
 
     public BELogin(WebDriver driver, ExtentTest test) {
@@ -36,15 +37,36 @@ public class BELogin {
     }
     public void Login(String username, String password) throws InterruptedException, IOException {
             ActionClass actionclass = new ActionClass(driver, extentTest);
-            Thread.sleep(5000);
-             actionclass.clickOnObject(accpt);
-            actionclass.setValueinTextbox(usernamefield, username);
-            actionclass.setValueinTextbox(passwordfield, password);
-            actionclass.clickOnObject(submit);
-//            Thread.sleep(10000);
+            Thread.sleep(10000);
+        try {
+            // Wait briefly for popup; don't fail if not present
+            if (accept.isDisplayed()) {
+                actionclass.clickOnObject(accept);
+                System.out.println("Popup accepted.");
+            }
+        } catch (Exception e) {
+            System.out.println("Popup not present, proceeding with login.");
+        }
+
+        actionclass.setValueinTextbox(usernamefield, username);
+                actionclass.setValueinTextbox(passwordfield, password);
+                actionclass.clickOnObject(submit);
+                Thread.sleep(10000);
+        try {
+            // Wait briefly for popup; don't fail if not present
+            if (popup.isDisplayed()) {
+                actionclass.clickOnObject(accept);
+                System.out.println("Popup accepted.");
+            }
+        } catch (Exception e) {
+            System.out.println("Popup not present, proceeding with login.");
+        }
+
+
 //            actionclass.clickOnObject(backtosite);
-//            Thread.sleep(2000);
-//            actionclass.hoverOnObject(Content);
-//            actionclass.clickOnObject(AddContent);
+            Thread.sleep(2000);
+                actionclass.hoverOnObject(Content);
+                actionclass.clickOnObject(AddContent);
+
         }
     }
