@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Isolated Test Suite">
+    <test name="Login Tests">
+    <classes>
+<!--        <class name="AddModule_dev_site.Pages.BELogin"/>-->
+        <class name="AddModule_dev_site.TestCases.TestCasePage_Addcontent">
+        <methods>
+            <include name="Login"/>
+            <include name="Blogpost_Module"/>
+            <include name="CampervanCollection_Module"/>
+        </methods>
+        </class>
+    </classes>
+</test>
+</suite>
