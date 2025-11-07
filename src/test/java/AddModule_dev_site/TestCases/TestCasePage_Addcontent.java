@@ -70,13 +70,13 @@ public class TestCasePage_Addcontent extends BaseCase {
         Addcontent_Module Group_tour_leanding_pagemodule = new Addcontent_Module(driver, logger);
         Group_tour_leanding_pagemodule.GroupTourlandingpage(Titlename, Edit_Titlename);
     }
-    // this is for the Hotels module testing
-    @Test(priority = 9, groups = "AddContent")
-    public void Hotels_Module() throws IOException, InterruptedException, SQLException, AWTException {
-        logger = extent.createTest("Check Hotels module functionality.");
-        Addcontent_Module HotelsModule = new Addcontent_Module(driver, logger);
-        HotelsModule.Hotels(Titlename, Edit_Titlename);
-    }
+    // this is for the Hotels module testing  - This is removed from the BE so commented whole module
+//    @Test(priority = 9, groups = "AddContent")
+//    public void Hotels_Module() throws IOException, InterruptedException, SQLException, AWTException {
+//        logger = extent.createTest("Check Hotels module functionality.");
+//        Addcontent_Module HotelsModule = new Addcontent_Module(driver, logger);
+//        HotelsModule.Hotels(Titlename, Edit_Titlename);
+//    }
     // this is for the Itinerary module testing
     @Test(priority = 10, groups = "AddContent")
     public void Itinerary_Module() throws IOException, InterruptedException, SQLException, AWTException {
@@ -98,13 +98,13 @@ public class TestCasePage_Addcontent extends BaseCase {
         Addcontent_Module PackageModule = new Addcontent_Module(driver, logger);
         PackageModule.PackageModule(Titlename, Edit_Titlename);
     }
-    // this is for the Tickettype_module module testing
-    @Test(priority = 13, groups = "AddContent")
-    public void Tickettype_Module() throws IOException, InterruptedException, SQLException, AWTException {
-        logger = extent.createTest("Check Tickettype_module  functionality.");
-        Addcontent_Module Tickettypemodule = new Addcontent_Module(driver, logger);
-        Tickettypemodule.Tickettype_module(Titlename, Edit_Titlename, Price);
-    }
+    // this is for the Tickettype_module module testing - removed by client from BE
+//    @Test(priority = 13, groups = "AddContent")
+//    public void Tickettype_Module() throws IOException, InterruptedException, SQLException, AWTException {
+//        logger = extent.createTest("Check Tickettype_module  functionality.");
+//        Addcontent_Module Tickettypemodule = new Addcontent_Module(driver, logger);
+//        Tickettypemodule.Tickettype_module(Titlename, Edit_Titlename, Price);
+//    }
     // this is for the Tour_module module testing
     @Test(priority = 14, groups = "AddContent")
     public void Tour_Module() throws IOException, InterruptedException, SQLException, AWTException {
