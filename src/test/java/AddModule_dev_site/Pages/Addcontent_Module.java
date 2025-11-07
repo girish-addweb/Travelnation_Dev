@@ -22,9 +22,9 @@ import static AddModule_dev_site.Constans.CommonVars.Price;
 public class Addcontent_Module {
     WebDriver driver;
     ExtentTest extentTest;
-    @FindBy(xpath = "/html/body/div[2]/nav/div[2]/div/nav/div[1]/ul/li[2]/a")
+    @FindBy(xpath = "//a[normalize-space(text())='Content']")
     WebElement Content;
-    @FindBy(xpath = "/html/body/div[2]/div[5]/main/div[4]/div/div/div/div[1]/a")
+    @FindBy(xpath = "/html/body/div[2]/div[5]/main/div[4]/div/div/div/div[2]/a")
     WebElement Blogpost_module;
     @FindBy(xpath = "/html/body/div[2]/div/header/div/div/div[2]/div[1]/div/div/input")
     WebElement Unpublish_Button;
@@ -353,7 +353,7 @@ public class Addcontent_Module {
         actionClass.setValueinTextbox(Titlefield, titleField);
         actionClass.clickOnObject(PagemediaTab);
         actionClass.clickOnObject(primaryimage);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[8]/div[2]/div/div/div[2]/div/div[3]/div/form/div[2]/div[2]/div[2]/span/article/div[1]/div/img")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[8]/div[2]/div/div/div[2]/div/div[3]/div/form/div[2]/div[1]/div[2]/span/article/div[1]/div/picture/img")));
         actionClass.clickOnObject(Select_image);
         actionClass.clickOnObject(Insert_image);
         Thread.sleep(8000);
